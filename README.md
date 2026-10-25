@@ -1,23 +1,43 @@
 # Saifullah Connects
 
-Landing page for Saifullah Connects, an influencer marketing agency connecting brands with the right creators.
+Marketing site for Saifullah Connects — connecting AI/software brands with relevant creators
+through research-led, clearly agreed partnerships.
 
 ## Stack
 
-Plain HTML, CSS, and JavaScript — no build step required.
+- [Next.js](https://nextjs.org) (App Router, TypeScript)
+- [Tailwind CSS v4](https://tailwindcss.com)
 
 ## Running locally
 
-Open `index.html` directly in a browser, or serve the folder with any static server:
-
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://localhost:3000`.
 
 ## Structure
 
-- `index.html` — page markup
-- `css/style.css` — styles
-- `js/script.js` — mobile nav toggle
+- `src/app/page.tsx` — home page
+- `src/app/contact/page.tsx` — contact page (enquiry form + FAQ)
+- `src/app/privacy/page.tsx` — privacy notice
+- `src/app/api/enquiry/route.ts` — contact form submission handler
+- `src/components/` — shared Header, Footer, Logo, ContactForm
+- `src/app/sitemap.ts`, `src/app/robots.ts` — SEO files
+
+## Contact form backend
+
+The `/api/enquiry` route currently validates submissions and logs them server-side — there's no
+email or database provider wired up yet. Before relying on it in production, connect it to a
+transactional email service (e.g. [Resend](https://resend.com)) or a database so enquiries are
+actually captured and actioned.
+
+## Brand
+
+| Colour | Hex | Usage |
+| --- | --- | --- |
+| Deep navy | `#10263D` | Headlines, main text, footer |
+| Dark teal | `#006D77` | Buttons, important links |
+| White | `#FFFFFF` | Most backgrounds |
+| Pale mint | `#EAF6F2` | Occasional background sections |
