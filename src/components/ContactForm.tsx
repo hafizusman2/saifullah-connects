@@ -140,7 +140,7 @@ export default function ContactForm() {
             name="message"
             required
             rows={4}
-            className="mt-1.5 w-full rounded-lg border border-border px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
+            className="mt-1.5 w-full resize-none rounded-lg border border-border px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
           />
         </div>
 
