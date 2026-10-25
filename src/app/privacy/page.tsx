@@ -28,8 +28,8 @@ export default function PrivacyPage() {
           </p>
           <p>
             If you&apos;d like your details removed from our records, email us at{" "}
-            <a href="mailto:saifullahishere059@gmail.com" className="font-medium text-teal hover:underline">
-              saifullahishere059@gmail.com
+            <a href="mailto:saifullah@saifullahconnects.com" className="font-medium text-teal hover:underline">
+              saifullah@saifullahconnects.com
             </a>{" "}
             and we&apos;ll action your request.
           </p>

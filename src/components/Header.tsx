@@ -4,13 +4,13 @@ import Logo from "./Logo";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
         <Logo />
-        <nav className="flex items-center gap-8 text-sm font-medium text-navy">
-          <Link href="/#how-it-works" className="transition-colors hover:text-teal">
+        <nav className="flex items-center gap-4 text-sm font-medium text-navy sm:gap-8">
+          <Link href="/#how-it-works" className="whitespace-nowrap transition-colors hover:text-teal">
             How it works
           </Link>
-          <Link href="/contact" className="transition-colors hover:text-teal">
+          <Link href="/contact" className="whitespace-nowrap transition-colors hover:text-teal">
             Contact
           </Link>
         </nav>

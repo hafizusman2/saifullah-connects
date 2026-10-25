@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type EnquirerType = "brand" | "creator" | "other";
 
@@ -18,9 +18,10 @@ const channelLabel: Record<EnquirerType, string> = {
   other: "Company or channel link",
 };
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "submitting" | "error";
 
 export default function ContactForm() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const initial = searchParams.get("as");
   const [type, setType] = useState<EnquirerType>(
@@ -50,13 +51,17 @@ export default function ContactForm() {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("Request failed");
-      setStatus("success");
+      // Drive the success view off the URL (not component state) so it can't
+      // get stuck showing "sent" if Next.js reuses this component instance
+      // from its router cache when the user navigates away and back.
+      router.replace("/contact?sent=1", { scroll: false });
+      setStatus("idle");
     } catch {
       setStatus("error");
     }
   }
 
-  if (status === "success") {
+  if (searchParams.get("sent") === "1") {
     return (
       <div className="rounded-2xl border border-border bg-white p-8 text-center">
         <h2 className="text-lg font-semibold text-navy">Enquiry sent.</h2>
@@ -77,7 +82,7 @@ export default function ContactForm() {
             key={tab.value}
             type="button"
             onClick={() => setType(tab.value)}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+            className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               type === tab.value ? "bg-teal text-white" : "text-navy-soft hover:text-navy"
             }`}
           >
@@ -187,7 +192,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-dark disabled:opacity-60"
+          className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-dark disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "submitting" ? "Sending..." : "Send enquiry"}
           {status !== "submitting" && (
