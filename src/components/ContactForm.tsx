@@ -29,6 +29,18 @@ export default function ContactForm() {
   );
   const [status, setStatus] = useState<Status>("idle");
 
+  // Next.js can reuse this component instance across navigations (its
+  // router cache), so the useState initializer above won't rerun when the
+  // "as" param changes on a later visit. Sync during render (React's
+  // documented pattern for this) rather than via an effect.
+  const [lastSeenAs, setLastSeenAs] = useState(initial);
+  if (initial !== lastSeenAs) {
+    setLastSeenAs(initial);
+    if (initial === "creator" || initial === "other" || initial === "brand") {
+      setType(initial);
+    }
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
