@@ -28,10 +28,18 @@ Then visit `http://localhost:3000`.
 
 ## Contact form backend
 
-The `/api/enquiry` route currently validates submissions and logs them server-side — there's no
-email or database provider wired up yet. Before relying on it in production, connect it to a
-transactional email service (e.g. [Resend](https://resend.com)) or a database so enquiries are
-actually captured and actioned.
+The `/api/enquiry` route sends each submission by email (via [Resend](https://resend.com)) to
+`saifullah@saifullahconnects.com`, with the submitter's address set as reply-to.
+
+To enable actual delivery:
+
+1. Sign up at [resend.com](https://resend.com) and create an API key.
+2. Copy `.env.example` to `.env.local` and set `RESEND_API_KEY`.
+3. Verify `saifullahconnects.com` in Resend, then set `ENQUIRY_FROM_EMAIL` (see `.env.example`)
+   so the notification email is sent from your own domain instead of Resend's shared sender.
+
+Without `RESEND_API_KEY` set, submissions are still validated and logged server-side, but no
+email is sent — useful for local development.
 
 ## Brand
 
