@@ -4,21 +4,12 @@ const NAVY_PATH =
 const ACCENT_PATH =
   "M1744 3058 c-55 -57 -113 -121 -129 -142 -28 -37 -29 -40 -11 -50 41 -24 141 -102 174 -135 43 -45 115 -156 147 -226 32 -73 48 -80 187 -80 103 0 120 2 145 21 40 30 41 75 3 189 -56 167 -184 351 -326 464 -41 34 -79 61 -83 61 -4 0 -53 -46 -107 -102z M1518 2733 c-38 -43 -122 -221 -163 -347 -94 -284 -132 -591 -114 -908 21 -381 100 -640 270 -888 75 -110 204 -252 240 -265 16 -6 41 -20 57 -32 16 -12 59 -40 96 -62 l67 -42 38 30 c60 47 241 240 241 256 0 8 -27 28 -61 45 -170 86 -321 235 -403 398 -93 186 -127 350 -133 657 -8 344 26 568 117 781 45 106 45 107 -8 197 -45 77 -102 139 -157 172 -51 30 -67 31 -87 8z M1939 2061 c-21 -21 -29 -39 -29 -65 0 -42 28 -67 103 -92 187 -61 388 -220 476 -376 18 -31 37 -61 44 -66 7 -5 62 -11 122 -13 l110 -4 -3 50 c-4 70 -36 171 -74 232 -140 221 -383 363 -624 363 -92 0 -97 -1 -125 -29z M333 1770 c-34 -14 -46 -48 -51 -151 -6 -126 3 -185 33 -215 l24 -24 311 0 c187 0 319 4 330 10 30 16 44 72 27 112 -13 32 -23 37 -173 92 -87 33 -217 88 -288 123 -127 62 -166 72 -213 53z";
 
-export default function LogoMark({
-  variant = "navy",
-  className,
-}: {
-  variant?: "navy" | "white";
-  className?: string;
-}) {
-  const mainFill = variant === "white" ? "#FFFFFF" : "#10263D";
-  const accentFill = variant === "white" ? "#8FD9CC" : "#006D77";
-
+export default function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 402 419" className={className} aria-hidden="true">
       <g transform="translate(0,419) scale(0.1,-0.1)">
-        <path fill={mainFill} d={NAVY_PATH} />
-        <path fill={accentFill} d={ACCENT_PATH} />
+        <path fill="currentColor" d={NAVY_PATH} />
+        <path fill="var(--color-teal)" d={ACCENT_PATH} />
       </g>
     </svg>
   );

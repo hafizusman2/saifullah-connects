@@ -59,17 +59,17 @@ export default function ContactPage() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-mint"
+          className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-soft"
         />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute right-10 top-20 h-40 w-40 rounded-full border border-teal/30"
         />
         <div className="relative mx-auto max-w-6xl px-6 pt-16 pb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-navy sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">
             Let&apos;s find the right fit.
           </h1>
-          <p className="mt-4 max-w-md text-[15px] leading-relaxed text-navy-soft">
+          <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
             Tell us who you are and what you have in mind.
           </p>
         </div>
@@ -78,9 +78,9 @@ export default function ContactPage() {
       <section id="enquiry" className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1fr]">
           <div className="flex flex-col gap-6">
-            <div className="rounded-2xl bg-mint p-8">
-              <h2 className="text-lg font-semibold text-navy">A clear first conversation.</h2>
-              <p className="mt-2 text-sm leading-relaxed text-navy-soft">
+            <div className="rounded-2xl bg-soft p-8">
+              <h2 className="text-lg font-semibold text-ink">A clear first conversation.</h2>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                 We&apos;ll learn about your goals, review the fit and discuss next steps.
               </p>
 
@@ -91,15 +91,15 @@ export default function ContactPage() {
                       {step.number}
                     </span>
                     <div>
-                      <h3 className="text-sm font-semibold text-navy">{step.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-navy-soft">{step.body}</p>
+                      <h3 className="text-sm font-semibold text-ink">{step.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-ink-soft">{step.body}</p>
                     </div>
                   </li>
                 ))}
               </ol>
             </div>
 
-            <div className="flex gap-3 rounded-2xl border border-border p-5">
+            <div className="flex gap-3 rounded-2xl border border-line p-5">
               <svg
                 width="18"
                 height="18"
@@ -108,10 +108,10 @@ export default function ContactPage() {
                 aria-hidden="true"
                 className="mt-0.5 shrink-0"
               >
-                <circle cx="12" cy="12" r="9" stroke="#35506A" strokeWidth="1.6" />
-                <path d="M12 11v6M12 8v.01" stroke="#35506A" strokeWidth="1.6" strokeLinecap="round" />
+                <circle cx="12" cy="12" r="9" stroke="var(--color-ink-soft)" strokeWidth="1.6" />
+                <path d="M12 11v6M12 8v.01" stroke="var(--color-ink-soft)" strokeWidth="1.6" strokeLinecap="round" />
               </svg>
-              <p className="text-sm leading-relaxed text-navy-soft">
+              <p className="text-sm leading-relaxed text-ink-soft">
                 Submitting an enquiry does not create a partnership.
               </p>
             </div>
@@ -124,12 +124,12 @@ export default function ContactPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
-        <h2 className="text-xl font-bold tracking-tight text-navy">Frequently asked questions</h2>
+        <h2 className="text-xl font-bold tracking-tight text-ink">Frequently asked questions</h2>
         <div className="mt-8 grid gap-8 sm:grid-cols-2">
           {faqs.map((faq) => (
             <div key={faq.question}>
-              <h3 className="text-sm font-semibold text-navy">{faq.question}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-soft">{faq.answer}</p>
+              <h3 className="text-sm font-semibold text-ink">{faq.question}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{faq.answer}</p>
             </div>
           ))}
         </div>

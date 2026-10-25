@@ -1,24 +1,45 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  /* Fixed brand colors — same in both themes. Used for deliberate
+     dark-navy / teal emphasis blocks (and their paired white/mint text),
+     never as generic page text or surfaces. */
   --color-navy: #10263d;
-  --color-navy-soft: #35506a;
+  --color-mint: #eaf6f2;
   --color-teal: #006d77;
   --color-teal-dark: #00545c;
-  --color-mint: #eaf6f2;
-  --color-mint-deep: #d7ece4;
-  --color-white: #ffffff;
-  --color-border: #dfe6e5;
+
+  /* Theme-aware tokens — these flip under .dark */
+  --color-ink: #10263d;
+  --color-ink-soft: #35506a;
+  --color-page: #ffffff;
+  --color-soft: #eaf6f2;
+  --color-soft-deep: #d7ece4;
+  --color-line: #dfe6e5;
+}
+
+:root.dark {
+  --color-ink: #eef3f3;
+  --color-ink-soft: #a9bdce;
+  --color-page: #0b1620;
+  --color-soft: #122a2a;
+  --color-soft-deep: #173534;
+  --color-line: #233447;
 }
 
 @theme inline {
   --color-navy: var(--color-navy);
-  --color-navy-soft: var(--color-navy-soft);
+  --color-mint: var(--color-mint);
   --color-teal: var(--color-teal);
   --color-teal-dark: var(--color-teal-dark);
-  --color-mint: var(--color-mint);
-  --color-mint-deep: var(--color-mint-deep);
-  --color-border: var(--color-border);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-page: var(--color-page);
+  --color-soft: var(--color-soft);
+  --color-soft-deep: var(--color-soft-deep);
+  --color-line: var(--color-line);
   --font-sans: var(--font-inter);
 }
 
@@ -28,9 +49,16 @@
   }
 }
 
-body {
-  background: var(--color-white);
-  color: var(--color-navy);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+html {
+  color-scheme: light;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}

@@ -10,8 +10,8 @@ export default function PrivacyPage() {
   return (
     <>
       <section className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-3xl font-bold tracking-tight text-navy">Privacy Notice</h1>
-        <div className="mt-8 space-y-6 text-sm leading-relaxed text-navy-soft">
+        <h1 className="text-3xl font-bold tracking-tight text-ink">Privacy Notice</h1>
+        <div className="mt-8 space-y-6 text-sm leading-relaxed text-ink-soft">
           <p>
             When you submit an enquiry through our contact form, we collect your name, email
             address, company or channel link, and the details of your message, along with any

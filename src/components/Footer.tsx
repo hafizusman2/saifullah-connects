@@ -3,10 +3,10 @@ import Logo from "./Logo";
 
 export default function Footer({ variant = "home" }: { variant?: "home" | "contact" }) {
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
         <Logo />
-        <nav className="flex items-center gap-2 text-sm text-navy-soft">
+        <nav className="flex items-center gap-2 text-sm text-ink-soft">
           {variant === "home" ? (
             <Link href="/contact" className="hover:text-teal">
               Contact

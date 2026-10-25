@@ -75,9 +75,9 @@ export default function ContactForm() {
 
   if (searchParams.get("sent") === "1") {
     return (
-      <div className="rounded-2xl border border-border bg-white p-8 text-center">
-        <h2 className="text-lg font-semibold text-navy">Enquiry sent.</h2>
-        <p className="mt-2 text-sm leading-relaxed text-navy-soft">
+      <div className="rounded-2xl border border-line bg-page p-8 text-center">
+        <h2 className="text-lg font-semibold text-ink">Enquiry sent.</h2>
+        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
           Thanks for reaching out — we&apos;ll review the details and get back to you shortly.
         </p>
       </div>
@@ -85,17 +85,17 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-border bg-white p-8">
-      <h2 className="text-lg font-semibold text-navy">Your enquiry</h2>
+    <div className="rounded-2xl border border-line bg-page p-8">
+      <h2 className="text-lg font-semibold text-ink">Your enquiry</h2>
 
-      <div className="mt-5 grid grid-cols-3 gap-1 rounded-full bg-mint p-1">
+      <div className="mt-5 grid grid-cols-3 gap-1 rounded-full bg-soft p-1">
         {tabs.map((tab) => (
           <button
             key={tab.value}
             type="button"
             onClick={() => setType(tab.value)}
             className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-              type === tab.value ? "bg-teal text-white" : "text-navy-soft hover:text-navy"
+              type === tab.value ? "bg-teal text-white" : "text-ink-soft hover:text-ink"
             }`}
           >
             {tab.label}
@@ -105,7 +105,7 @@ export default function ContactForm() {
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-navy">
+          <label htmlFor="name" className="block text-sm font-medium text-ink">
             Name <span className="text-teal">*</span>
           </label>
           <input
@@ -113,12 +113,12 @@ export default function ContactForm() {
             name="name"
             required
             type="text"
-            className="mt-1.5 w-full rounded-lg border border-border px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
+            className="mt-1.5 w-full rounded-lg border border-line px-4 py-2.5 text-sm text-ink outline-none focus:border-teal"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-navy">
+          <label htmlFor="email" className="block text-sm font-medium text-ink">
             Email <span className="text-teal">*</span>
           </label>
           <input
@@ -126,12 +126,12 @@ export default function ContactForm() {
             name="email"
             required
             type="email"
-            className="mt-1.5 w-full rounded-lg border border-border px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
+            className="mt-1.5 w-full rounded-lg border border-line px-4 py-2.5 text-sm text-ink outline-none focus:border-teal"
           />
         </div>
 
         <div>
-          <label htmlFor="channel" className="block text-sm font-medium text-navy">
+          <label htmlFor="channel" className="block text-sm font-medium text-ink">
             {channelLabel[type]} <span className="text-teal">*</span>
           </label>
           <input
@@ -139,12 +139,12 @@ export default function ContactForm() {
             name="channel"
             required
             type="text"
-            className="mt-1.5 w-full rounded-lg border border-border px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
+            className="mt-1.5 w-full rounded-lg border border-line px-4 py-2.5 text-sm text-ink outline-none focus:border-teal"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-navy">
+          <label htmlFor="message" className="block text-sm font-medium text-ink">
             How can we help? <span className="text-teal">*</span>
           </label>
           <textarea
@@ -152,32 +152,32 @@ export default function ContactForm() {
             name="message"
             required
             rows={4}
-            className="mt-1.5 w-full resize-none rounded-lg border border-border px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
+            className="mt-1.5 w-full resize-none rounded-lg border border-line px-4 py-2.5 text-sm text-ink outline-none focus:border-teal"
           />
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="timing" className="block text-sm font-medium text-navy">
-              Preferred timing <span className="text-navy-soft">(optional)</span>
+            <label htmlFor="timing" className="block text-sm font-medium text-ink">
+              Preferred timing <span className="text-ink-soft">(optional)</span>
             </label>
             <input
               id="timing"
               name="timing"
               type="text"
               placeholder="e.g. Next month"
-              className="mt-1.5 w-full rounded-lg border border-border px-4 py-2.5 text-sm text-navy outline-none placeholder:text-navy-soft/60 focus:border-teal"
+              className="mt-1.5 w-full rounded-lg border border-line px-4 py-2.5 text-sm text-ink outline-none placeholder:text-ink-soft/60 focus:border-teal"
             />
           </div>
           <div>
-            <label htmlFor="budget" className="block text-sm font-medium text-navy">
-              Budget range <span className="text-navy-soft">(optional)</span>
+            <label htmlFor="budget" className="block text-sm font-medium text-ink">
+              Budget range <span className="text-ink-soft">(optional)</span>
             </label>
             <select
               id="budget"
               name="budget"
               defaultValue=""
-              className="mt-1.5 w-full rounded-lg border border-navy/25 bg-white px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
+              className="mt-1.5 w-full rounded-lg border border-ink/25 bg-page px-4 py-2.5 text-sm text-ink outline-none focus:border-teal"
             >
               <option value="">Not decided</option>
               <option value="under-1k">Under £1,000</option>
@@ -188,7 +188,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <p className="text-xs leading-relaxed text-navy-soft">
+        <p className="text-xs leading-relaxed text-ink-soft">
           We use these details to respond to your enquiry.{" "}
           <Link href="/privacy" className="font-medium text-teal hover:underline">
             Privacy Notice
