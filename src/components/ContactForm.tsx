@@ -165,7 +165,7 @@ export default function ContactForm() {
               id="budget"
               name="budget"
               defaultValue=""
-              className="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
+              className="mt-1.5 w-full rounded-lg border border-navy/25 bg-white px-4 py-2.5 text-sm text-navy outline-none focus:border-teal"
             >
               <option value="">Not decided</option>
               <option value="under-1k">Under £1,000</option>
