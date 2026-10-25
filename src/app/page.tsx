@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import HeroVideo from "@/components/HeroVideo";
 
 const researchSteps = [
   {
@@ -144,48 +145,8 @@ export default function Home() {
           </div>
 
           <div>
-            <div className="relative rounded-2xl bg-mint p-10">
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-2 self-start rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-navy shadow-sm">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-mint-deep">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <rect x="3" y="4" width="18" height="12" rx="1.5" stroke="#006D77" strokeWidth="1.6" />
-                      <path d="M8 20h8M12 16v4" stroke="#006D77" strokeWidth="1.6" strokeLinecap="round" />
-                    </svg>
-                  </span>{" "}
-                  Brand
-                </div>
-                <div className="flex aspect-video items-center justify-center rounded-xl bg-navy">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M7 5v14l11-7-11-7z" fill="#EAF6F2" />
-                    </svg>
-                  </span>
-                </div>
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-navy shadow-sm">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-mint-deep">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                          d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"
-                          stroke="#006D77"
-                          strokeWidth="1.6"
-                        />
-                      </svg>
-                    </span>{" "}
-                    Partnership
-                  </div>
-                  <div className="flex items-center gap-2 self-end rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-navy shadow-sm">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-md bg-mint-deep">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <circle cx="12" cy="8" r="3.5" stroke="#006D77" strokeWidth="1.6" />
-                        <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="#006D77" strokeWidth="1.6" strokeLinecap="round" />
-                      </svg>
-                    </span>{" "}
-                    Creator
-                  </div>
-                </div>
-              </div>
+            <div className="rounded-2xl bg-mint p-4">
+              <HeroVideo />
             </div>
             <p className="mt-4 text-center text-xs font-medium text-navy-soft">
               Research-led. Founder-led. Clearly agreed.
